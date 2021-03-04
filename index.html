@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="css/style.css">
+        <script src="js/script.js"></script>
+    </head>
+    <body>
+        <main>
+            <div class="center">
+                <form name="calculator">
+                    <div class="label">
+                        <p>Number 1</p>
+                        <input type="text" id="number1" value="" autofocus>
+                    </div>
+                    <div class="label">
+                        <p>Number 2</p>
+                        <input type="text" id="number2" value="">
+                    </div>
+                    <div class="radio-selection">
+                        <input type="radio" name="operator" class="operator" value="add" id="add">
+                        <label for="add">Add</label>
+                        <input type="radio" name="operator" class="operator" value="subtract" id="subtract">
+                        <label for="subtract">Subtract</label>
+                        <input type="radio" name="operator" class="operator" value="multiply" id="multiply">
+                        <label for="multiply">Multiply</label>
+                        <input type="radio" name="operator" class="operator" value="divide" id="divide">
+                        <label for="divide">Divide</label>
+                    </div>
+                </form>
+                <button onclick="processRequest('calculate')">=</button>
+                <button onclick="processRequest('clear')">Clear</button>
+                <p id="result">Result</p>
+            </div>
+        </main>
+        <div class="center">
+        </div>
+    </body>
+</html>

@@ -1,0 +1,48 @@
+
+/* set standard style for the body element */
+body {
+    position: relative;
+    width: 600px;
+    margin: 0 auto;
+    top: 50%;
+    transform: translateY(100%);
+}
+
+/* vertically center the main section of the body */
+
+
+.center {
+    text-align: center;
+    background: rgb(90, 185, 234,0.1);
+}
+.center button {
+    margin: 10px;
+    padding: 5px 10px;
+}
+.label {
+    width: 50%;
+    float: left;
+
+}
+
+.label input {
+    width: 200px;
+    margin-bottom: 30px;
+}
+
+.radio-selection label {
+    margin-right: 20px;
+}
+.radio-selection input {
+    margin-left: 20px;
+}
+
+input[type="radio"]:checked + label {
+    font-weight: bold;
+}
+
+#result {
+    padding-bottom: 30px;
+}
+
+
