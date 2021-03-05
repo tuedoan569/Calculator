@@ -1,3 +1,19 @@
+/************************************************************/
+/* Author:          Tue Doan                                */
+/* Creation Date:   Feb 28, 2021                            */
+/* Due Date:        Mar 04, 2021                            */
+/* Course:          Miles Training Lab                      */
+/* Assignment:      Project #3                              */
+/* Filename:        calculator.js                           */
+/* Purpose: Simple calculator program with 2 numbers.       */
+/************************************************************/
+
+/**
+ * 
+ * Hanlde the request when user clicks on the button.
+ * 
+ * @param {string} request which button the request from.
+ */
 function processRequest(request) {
     console.log(request);
     const requests = {
@@ -24,10 +40,29 @@ function processRequest(request) {
 
 }
 
+/**
+ * 
+ * Display the result to the screen.
+ * 
+ * @param {*} number1 The user first input.
+ * @param {*} number2 The user second input.
+ * @param {*} result The result of calculation based on user inputs and selection.
+ * @param {*} operator The user selected operator.
+ * @param {*} resultText The result object which holds the result to be displayed to the screen.
+ */
 function displayResult(number1, number2, result, operator, resultText) {
     resultText.innerHTML = number1 + " " + operator + " " + number2 + " is " + result;
 }
 
+/**
+ * 
+ * Handle error checking before proceed with the calculation.
+ * 
+ * @param {*} number1 The user first input.
+ * @param {*} number2 The user second input.
+ * @param {*} operator The user selected operator.
+ * @param {*} resultText The result object which holds the result to be displayed to the screen.
+ */
 function calculate(number1, number2, operator, resultText) {
     const operators = {
         ADD: "add",
@@ -46,8 +81,17 @@ function calculate(number1, number2, operator, resultText) {
     }
 }
 
+/**
+ * 
+ * Process the calculation based on the user inputs and selection 
+ * and return the result or any error that encounters
+ * 
+ * @param {*} operators The key-value object that contains all the operators.
+ * @param {*} operator The user selected operator.
+ * @param {*} number1 The user first input.
+ * @param {*} number2 The user second input.
+ */
 function processCalculatation(operators, operator, number1, number2) {
-
     switch(operator.value) {
         case operators.ADD:
             return number1 + number2;
@@ -66,6 +110,9 @@ function processCalculatation(operators, operator, number1, number2) {
     }
 }
 
+/**
+ * Return operator object that user selects, otherwise return false
+ */
 function getOperator() {
     let operators = document.getElementsByClassName("operator");
     
@@ -77,6 +124,15 @@ function getOperator() {
     return false;
 }
 
+/**
+ * 
+ * Clear all inputs, selection, return to default value, and focus cursor on first input box.
+ * 
+ * @param {*} number1 The first user input.
+ * @param {*} number2 The sencond user input.
+ * @param {*} operator The user selected operator.
+ * @param {*} resultText The result object which holds the result to be displayed to the screen.
+ */
 function clearText(number1, number2, operator, resultText) {
     number1.value = "";
     number2.value = "";
@@ -87,10 +143,22 @@ function clearText(number1, number2, operator, resultText) {
 
 }
 
+/**
+ * 
+ * Return true if variable is a number, otherwise false.
+ * 
+ * @param {number} number The number being evaluated.
+ */
 function validateNumber(number) {
     return !(isNaN(number));
 }
 
+/**
+ * 
+ * Get element object from the string id.
+ * 
+ * @param {string} The string id.
+ */
 function getElementById(element) {
     return document.getElementById(element);
 }
