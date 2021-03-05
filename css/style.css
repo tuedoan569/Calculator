@@ -9,20 +9,21 @@ body {
 }
 
 /* vertically center the main section of the body */
-
-
 .center {
     text-align: center;
     background: rgb(90, 185, 234,0.1);
 }
+
+/* set margin & padding for the button */
 .center button {
     margin: 10px;
     padding: 5px 10px;
 }
+
+/* set the label half of parent width and float left (side by side)*/
 .label {
     width: 50%;
     float: left;
-
 }
 
 .label input {
@@ -37,12 +38,29 @@ body {
     margin-left: 20px;
 }
 
+/* set the selected radio label bold when selected */
 input[type="radio"]:checked + label {
     font-weight: bold;
 }
 
+/* style for caculate button */
+#calculate {
+    background:rgb(0, 170, 255);
+    border: 1px solid rgb(5, 126, 187);
+    border-radius: 10px;
+}
+
+/* style for clear button */
+#clear {
+    background:rgba(83, 83, 83, 0.336);
+    border: 1px solid rgba(95, 95, 95, 0.747);
+    border-radius: 10px;
+}
+
+/* style for result text */
 #result {
     padding-bottom: 30px;
+    font-size: 20px;
 }
 
 

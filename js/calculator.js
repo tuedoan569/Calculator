@@ -15,7 +15,7 @@
  * @param {string} request which button the request from.
  */
 function processRequest(request) {
-    console.log(request);
+    
     const requests = {
         CALCULATE: "calculate",
         CLEAR: "clear"
@@ -70,12 +70,11 @@ function calculate(number1, number2, operator, resultText) {
         MULTIPLY: "multiply",
         DIVIDE: "divide"
     }
-
-    if (operator == false) {
-        alert("Please select an operator!");
-    }  else if (validateNumber(number1) == false || validateNumber(number2) == false) {
+    if (validateNumber(number1) == false || validateNumber(number2) == false || number1 == '' || number2 == '') {
         alert("Please enter a number");
-    }else {
+    } else if (operator == false) {
+        alert("Please select an operator!");
+    } else {
         let result = processCalculatation(operators, operator, number1, number2);
         displayResult(number1, number2, result, operator.value, resultText);
     }
@@ -94,7 +93,7 @@ function calculate(number1, number2, operator, resultText) {
 function processCalculatation(operators, operator, number1, number2) {
     switch(operator.value) {
         case operators.ADD:
-            return number1 + number2;
+            return parseInt(number1) + parseInt(number2);
         case operators.SUBSTRACT:
             return number1 - number2;
         case operators.MULTIPLY:
